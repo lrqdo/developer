@@ -31,11 +31,11 @@ Create a new access token by submitting a username/password pair or a refresh to
 + Response 200 (application/json)
     + Body
         {
-            access_token: "some_access_token",
-            expires_in: 3600,
-            token_type: "bearer",
-            scope: null,
-            refresh_token: "some_refresh_token"
+            "access_token": "some_access_token",
+            "expires_in": 3600,
+            "token_type": "bearer",
+            "scope": null,
+            "refresh_token": "some_refresh_token"
         }
 
 + Response 400 (application/json)
