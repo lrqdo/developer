@@ -3,7 +3,7 @@
 ## Build the doc
 ```
 docker build -t aglio docker/aglio/
-docker run --rm -v $PWD:/data -p 3000:3000 aglio aglio -i api.md -o api.html
+docker run --rm -v $PWD:/data aglio aglio -i api.md -o api.html
 ```
 
 ## Browse the doc
