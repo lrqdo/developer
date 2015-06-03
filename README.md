@@ -1,2 +1,13 @@
-# developer
-Public API documentation and more
+# Public API documentation and more
+
+## Build the doc
+```
+docker build -t aglio docker/aglio/
+docker run --rm -v $PWD:/data -p 3000:3000 aglio aglio -i api.md -o api.html
+```
+
+## Browse the doc
+```
+docker pull nginx
+docker run -v $PWD:/usr/share/nginx/html -p 80:80 --rm nginx
+```
