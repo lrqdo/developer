@@ -44,3 +44,27 @@ Create a new access token by submitting a username/password pair or a refresh to
             "error": "invalid_grant"
         }
 
+# Group Assemblies
+
+## Memberships [/me]
+
+Request user information to find out if user is member of one or several assemblies.
+
+## GET
+
++ Request (application/json)
+
++ Response 200 (application/json)
+    + Body
+        {
+            "isMember": true,
+            "hivesAsMember": [
+                {
+                    "id": 123,
+                    "name": "Le Comptoir Général",
+                    "status": "open",
+                    "joinedAt": "2015-04-26T17:25:47+02:00"
+                },
+                { ... }
+            ]
+        }
