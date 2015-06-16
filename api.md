@@ -65,6 +65,57 @@ Request user information to find out if user is member of one or several assembl
                     "status": "open",
                     "joinedAt": "2015-04-26T17:25:47+02:00"
                 },
-                { ... }
+                (...)
             ]
         }
+
+# Group Sale
+
+## Products for sale [/distribution/:id/products]
+
+This route is public.
+
+## GET
+
++ Request (application/json)
+
++ Response 200 (application/json)
+    + Body
+        [
+            {
+                "id": 71175,
+                "name": "cerises bigarreaux",
+                "description": "Cerises bigarreaux de l'Yonne",
+                "freshness": 1,
+                "composition": null,
+                "dfsp_priority": 28,
+                "type": {
+                    "id": 225,
+                    "quantityUnit": "mg",
+                    "quantityStrategy": "weight"
+                },
+                "farmId": 2893,
+                "photoId": "5478488b5f4271bf76edfd3e",
+                "storageLife": {
+                    "amount":"2",
+                    "unit":"days"
+                },
+                "offers": [
+                    {
+                        "id": 284201,
+                        "count": null,
+                        "quantity": {
+                            "amount": 2000000,
+                            "unit": "mg"
+                        },
+                        "price": {
+                            "amount": 780,
+                            "currency": "EUR"
+                        },
+                        "availableStock": "unlimited"
+                    },
+                    (...)
+                ]
+            },
+            (...)
+        ]
