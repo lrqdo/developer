@@ -119,3 +119,68 @@ This route is public.
             },
             (...)
         ]
+
+# Group Orders
+
+## Current basket and orders [/orders]
+
+## GET
+
+Attributes:
+
+    + state (number)
+
+Number | Name        | Description
+-------|-------------|------------
+1      | Cart        | Ongoing order. User is shopping.
+2      | Cart locked | User has clicked button "Pay". A payment form has been generated on PSP side.
+3      | Pending     | Payment is in progress. Pending PSP feedback.
+4      | Confirmed   | Payment is successful.
+5      | Shipped     | Distribution is over. Member got the order.
+6      | *n/a*       | *n/a*
+7      | Canceled    | Payment has been denied or canceled.
+8      | *n/a*       | *n/a*
+
++ Request (application/json)
+
++ Response 200 (application/json)
+    + Body
+        {
+            "count": 2,
+            "orders: [
+                {
+                    "id": 123,
+                    "createdAt": "2015-06-24T11:15:26+02:00",
+                    "status": "basket",
+                    "state": 1,
+                    "totalPrice": {
+                        "amount": 1120,
+                        "currency": "EUR"
+                    },
+                    "countItems": 2,
+                    "items": [...],
+                    "distributionId": 456,
+                    "distribution": {}
+                },
+                {
+                    "id": 123,
+                    "status": "order",
+                    "state": 2,
+                    "distributionId": 456,
+                    "paymentUrl": "",
+                    "paymentForm": "<form>...</form>",
+                    "paymentRequest": {
+                        "url": "https://secure.ogone.com/ncol/test/orderstandard_utf8.asp",
+                        "data": "PSPID=TunzLRQDO&ORDERID=390878&AMOUNT=420&CURRENCY=EUR..."
+                    },
+                    "totalPrice": {
+                        "amount": 1120,
+                        "currency": "EUR"
+                    },
+                    "countItems": 2,
+                    "items": [...],
+                    "distributionId": 456,
+                    "distribution": {}
+                }
+            ]
+        }
