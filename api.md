@@ -184,3 +184,60 @@ Number | Name        | Description
                 }
             ]
         }
+
+## Pay a basket [/distributions/:id/basket/confirm]
+
+## POST
+
++ Request (application/json)
+
+    {
+        "urlAccept": "https://ppr.thefoodassembly.com/fr/basket/success/456",
+        "urlDecline": "https://ppr.thefoodassembly.com/fr/basket",
+        "urlCancel": "https://ppr.thefoodassembly.com/fr/basket"
+    }
+
++ Response 200 (application/json)
+
+    {
+        "paymentForm": "<form>...</form>",
+        "paymentRequest": {
+            "url": "https://secure.ogone.com/ncol/test/orderstandard_utf8.asp",
+            "data": "PSPID=TunzLRQDO&ORDERID=390878&AMOUNT=420&CURRENCY=EUR..."
+        }
+    }
+
+## Repay a failed order [/orders/:id/payments]
+
+## POST
+
++ Request (application/json)
+
+    {
+        "urlAccept": "https://ppr.thefoodassembly.com/fr/basket/success/456",
+        "urlDecline": "https://ppr.thefoodassembly.com/fr/basket",
+        "urlCancel": "https://ppr.thefoodassembly.com/fr/basket"
+    }
+
++ Response 200 (application/json)
+
+    {
+        "id": 123,
+        "status": "order",
+        "state": 2,
+        "distributionId": 456,
+        "paymentUrl": "",
+        "paymentForm": "<form>...</form>",
+        "paymentRequest": {
+            "url": "https://secure.ogone.com/ncol/test/orderstandard_utf8.asp",
+            "data": "PSPID=TunzLRQDO&ORDERID=390878&AMOUNT=420&CURRENCY=EUR..."
+        },
+        "totalPrice": {
+            "amount": 1120,
+            "currency": "EUR"
+        },
+        "countItems": 2,
+        "items": [...],
+        "distributionId": 456,
+        "distribution": {}
+    }
