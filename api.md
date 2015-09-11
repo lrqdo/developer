@@ -46,7 +46,7 @@ Create a new access token by submitting a username/password pair or a refresh to
 
 # Group Assemblies
 
-## Memberships [/me]
+## Memberships [/me/]
 
 Request user information to find out if user is member of one or several assemblies.
 
