@@ -5,7 +5,7 @@ HOST: https://api.thefoodassembly.com/
 
 # Group Authentication
 
-# Oauth token [/oauth/v2/token]
+# Oauth token [/oauth/v2/token/]
 
 ## Create Token [POST]
 
@@ -46,7 +46,7 @@ Create a new access token by submitting a username/password pair or a refresh to
 
 # Group Assemblies
 
-## Memberships [/me]
+## Memberships [/me/]
 
 Request user information to find out if user is member of one or several assemblies.
 
@@ -71,7 +71,7 @@ Request user information to find out if user is member of one or several assembl
 
 # Group Sale
 
-## Products for sale [/distribution/:id/products]
+## Products for sale [/distribution/:id/products/]
 
 This route is public.
 
@@ -122,7 +122,7 @@ This route is public.
 
 # Group Orders
 
-## Current basket and orders [/orders]
+## Current basket and orders [/orders/]
 
 ## GET
 
@@ -185,7 +185,7 @@ Number | Name        | Description
             ]
         }
 
-## Pay a basket [/distributions/:id/basket/confirm]
+## Pay a basket [/distributions/:id/basket/confirm/]
 
 ## POST
 
@@ -207,7 +207,7 @@ Number | Name        | Description
         }
     }
 
-## Repay a failed order [/orders/:id/payments]
+## Repay a failed order [/orders/:id/payments/]
 
 ## POST
 
