@@ -207,6 +207,14 @@ Number | Name        | Description
         }
     }
 
++ Response 400 (application/json)
+
+    {
+        "error": "MissingUserInformation",
+        "details": "Order cannot be placed because some user information are missing.",
+        "orderUuid": "cce4b7d2-3e1b-45ef-b8a2-467b4db72f96"
+    }
+
 ## Repay a failed order [/orders/:id/payments/]
 
 ## POST
@@ -240,4 +248,12 @@ Number | Name        | Description
         "items": [...],
         "distributionId": 456,
         "distribution": {}
+    }
+
++ Response 400 (application/json)
+
+    {
+        "error": "MissingUserInformation",
+        "details": "Order cannot be placed because some user information are missing.",
+        "orderUuid": "cce4b7d2-3e1b-45ef-b8a2-467b4db72f96"
     }
