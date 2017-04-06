@@ -1,0 +1,3 @@
+#!/bin/sh
+
+docker-compose run --rm -w /data aglio aglio -i api.md -o api.html
